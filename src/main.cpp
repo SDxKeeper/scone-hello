@@ -19,20 +19,22 @@
 #define EXIT_FAILURE 1
 #define EXIT_SUCCESS 0
 
-#ifndef UNICODE
-int main(int argc, char *argv[]) {
-#else
-int wmain(int argc, wchar_t *argv[]) {
-#endif
+// #ifndef UNICODE
+// int main(int argc, char *argv[]) {
+// #else
+// int wmain(int argc, wchar_t *argv[]) {
+// #endif
 
+extern "C" int do_hello() {
     try {
 
         // ------------------------------ Parsing and validation of input args ---------------------------------
-        if (argc != 2) {
-            tcout << _T("Usage : ./hello_world <your_name>") << std::endl;
-            return EXIT_FAILURE;
-        }
-        tcout << "Hello " << argv[1] << "!" << std::endl;
+        // if (argc != 2) {
+        //     tcout << _T("Usage : ./hello_world <your_name>") << std::endl;
+        //     return EXIT_FAILURE;
+        // }
+        const std::string name{"Keeper"};
+        tcout << "Hello " << name << "!" << std::endl;
 
 
 
