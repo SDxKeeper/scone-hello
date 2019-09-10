@@ -19,5 +19,5 @@ and called from python via ctypes. All fork, spawn, exec methods do not work in 
     b. if you are running iexec cli on different host, than you can use remote mode
 
     ```
-    python3 deployment/deploy.py --image_url "sdxkeeper/gva-inference-app:scone-simple-0.0.20" --tee --mrenclave "40b336410d34f107cXXXXXXX161adf435d5b8d84dd4bb2cb1936de44e8b4a2|8c24db06044d73XXXXXf84feb65c83d6|cd12bcf962f626006a1d30620f205d1f6XXXXXX15a67d1f45d3b20398f55d23" [--name "your-app-name"] [--price 5]
+    python3 deployment/deploy.py --mode remote --image_url "sdxkeeper/gva-inference-app:scone-simple-0.0.20" --tee --mrenclave "40b336410d34f107cXXXXXXX161adf435d5b8d84dd4bb2cb1936de44e8b4a2|8c24db06044d73XXXXXf84feb65c83d6|cd12bcf962f626006a1d30620f205d1f6XXXXXX15a67d1f45d3b20398f55d23" [--name "your-app-name"] [--price 5]
     ```
