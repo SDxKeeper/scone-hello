@@ -30,10 +30,6 @@ if __name__ == "__main__":
                         help='overwrite existing iexec files')
 
     args = parser.parse_args()
-    print(args)
-    if args.tee and args.mrenclave is None:
-        print("tee apps require mrenclave to be set")
-        exit()
 
     if not args.force and (os.path.exists("iexec.json") or os.path.exists("chain.json") or os.path.exists("orders.json") or os.path.exists("deployed.json")):
         print("iexec.json already exists, exiting to prevent overwrite!")
@@ -53,6 +49,11 @@ if __name__ == "__main__":
         if args.mrenclave is None:
             print(Fore.RED + "Please provide MREnclave for remote operation mode (image is not available to extract it automatically)")
             exit()
+
+        if args.tee and args.mrenclave is None:
+            print("tee apps require mrenclave to be set")
+            exit()
+
         mrenclave = args.mrenclave
         try:
             registry_data = dclient.images.get_registry_data(args.image_url)
