@@ -46,12 +46,8 @@ if __name__ == "__main__":
     image_sha256 = ''
     mrenclave = None
     if args.mode == 'remote':
-        if args.mrenclave is None:
-            print(Fore.RED + "Please provide MREnclave for remote operation mode (image is not available to extract it automatically)")
-            exit()
-
         if args.tee and args.mrenclave is None:
-            print("tee apps require mrenclave to be set")
+            print(Fore.RED + "Please provide MREnclave for remote operation mode (image is not available to extract it automatically)")
             exit()
 
         mrenclave = args.mrenclave
