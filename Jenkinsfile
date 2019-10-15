@@ -8,7 +8,7 @@ pipeline {
       }
       steps{
         script {
-          docker.build(registry + ":$BUILD_NUMBER", "--build-arg http_proxy=proxy-chain.intel.com:911 --build-arg https_proxy=proxy-chain.intel.com:912 .")
+          docker.build(registry + ":$BUILD_NUMBER", "--build-arg http_proxy=http://proxy-chain.intel.com:911 --build-arg https_proxy=http://proxy-chain.intel.com:912 .")
         }
       }
     }
