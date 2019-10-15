@@ -22,6 +22,11 @@ pipeline {
 
         }
       }
+      stage('Cleanup') {
+        steps {
+          sh 'docker rmi $registry:$BUILD_NUMBER'
+        }
+      }
     }
     environment {
       http_proxy = 'proxy-chain.intel.com:911'
