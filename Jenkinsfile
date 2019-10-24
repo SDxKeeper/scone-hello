@@ -2,8 +2,6 @@ pipeline {
   agent { label 'ACI-container' }
   stages {
     stage('Build image') {
-      environment {
-      }
       steps {
         script {
           dockerImage = docker.build(registry + ":$BUILD_NUMBER", ".")
