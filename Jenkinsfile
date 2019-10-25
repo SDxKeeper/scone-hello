@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'ACI-container' }
+  agent { label 'AKS-container' }
   stages {
     stage('Build image') {
       steps {
